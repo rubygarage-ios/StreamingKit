@@ -2534,8 +2534,7 @@ OSStatus AudioConverterCallback(AudioConverterRef inAudioConverter, UInt32* ioNu
     convertInfo.packetDescriptions = packetDescriptionsIn;
     convertInfo.audioBuffer.mData = (void *)inputData;
     convertInfo.audioBuffer.mDataByteSize = numberBytes;
-    convertInfo.audioBuffer.mNumberChannels = audioConverterAudioStreamBasicDescription.mChannelsPerFrame;
-
+    
     if (packetDescriptionsIn && currentlyReadingEntry->processedPacketsCount < STK_MAX_COMPRESSED_PACKETS_FOR_BITRATE_CALCULATION)
     {
         int count = MIN(numberPackets, STK_MAX_COMPRESSED_PACKETS_FOR_BITRATE_CALCULATION - currentlyReadingEntry->processedPacketsCount);
